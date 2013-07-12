@@ -11,9 +11,9 @@
 <customClass></customClass>
 <contentAuthor>xwiki:XWiki.Admin</contentAuthor>
 <creationDate>1373368544000</creationDate>
-<date>1373630831000</date>
-<contentUpdateDate>1373630831000</contentUpdateDate>
-<version>14.1</version>
+<date>1373646312000</date>
+<contentUpdateDate>1373646312000</contentUpdateDate>
+<version>15.1</version>
 <title>livevalidationCustom macro</title>
 <template></template>
 <defaultTemplate></defaultTemplate>
@@ -260,7 +260,7 @@ document.observe('xwiki:dom:loaded', function(){
   validator.add( Validate.Custom, {
     against: function(value, args) {
       #set ($url = $xwiki.getURL($against, 'view', "xpage=plain&amp;outputSyntax=plain&amp;$!{args}"))
-      return ajaxValidator("$url", {'input':value, 'propref': "$services.model.serialize($propref)"});
+      return ajaxValidator("$url", {'input':value, 'propref': "$services.model.serialize($propref, 'default')"});
     },
     failureMessage: "$!{failureMessage}"
   });
